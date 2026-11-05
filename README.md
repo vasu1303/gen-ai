@@ -70,19 +70,30 @@ This repository implements a **Retrieval-Augmented Generation (RAG)** chatbot ov
 
 ---
 
-## 3) Setup Instructions (Windows)
+## 3) Setup Instructions 
 
-> Run commands from the project root:
-> `C:\Users\vasusingh\Downloads\assignment\assignment`
-
-### A) Create and activate virtual environment
+### A) Clone the repository
 
 ```powershell
-python -m venv venv
-.\venv\Scripts\Activate.ps1
+git clone <YOUR_REPO_URL>
+cd <YOUR_REPO_FOLDER>
 ```
 
-### B) Install dependencies
+### B) Create and activate virtual environment
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+If activation is blocked:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+```
+
+### C) Install dependencies
 
 ```powershell
 pip install -r req.txt
@@ -91,20 +102,40 @@ pip install -r req.txt
 > `req.txt` is the lean dependency file for this project flow.
 > `requirements.txt` is currently a much larger environment snapshot.
 
-### C) Install and start Ollama
+### D) Install and start Ollama
 
 1. Install Ollama from: <https://ollama.com/download>
-2. Start Ollama:
+2. Verify installation:
+
+```powershell
+ollama --version
+```
+
+If `ollama` is not recognized, use:
+
+```powershell
+& "C:\Users\<YOUR_USER>\AppData\Local\Programs\Ollama\ollama.exe" --version
+```
+
+3. Start Ollama:
 
 ```powershell
 ollama serve
 ```
 
-3. Pull required models (new terminal, same machine):
+If port 11434 is already in use, Ollama is already running and you can skip `serve`.
+
+4. Pull required models (new terminal, same machine):
 
 ```powershell
 ollama pull qwen2.5:1.5b
 ollama pull qwen3-vl:4b-instruct
+```
+
+5. Verify Ollama API:
+
+```powershell
+Invoke-WebRequest http://localhost:11434/api/tags -UseBasicParsing
 ```
 
 ---
@@ -219,3 +250,5 @@ python test_vision.py
 - Setup + run documentation: this README
 - 10-question evaluation output: `report/evaluation_results.json`
 - Final assignment report PDF: `report/final_report.pdf`
+
+---
