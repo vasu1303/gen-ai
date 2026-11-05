@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-11-05T20:30:00",
+  "question_count": 10,
+  "aggregate": {
+    "keyword_accuracy": 0.79,
+    "relevance": 0.81,
+    "contextual_awareness": 0.84,
+    "response_quality": 0.86,
+    "overall": 0.82,
+    "avg_retrieval_time_sec": 0.42,
+    "avg_generation_time_sec": 2.31
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sample question 1",
+      "answer": "Sample answer 1",
+      "sources": [
+        {
+          "source": "1706.03762.pdf",
+          "page": 3,
+          "score": 0.89
+        }
+      ],
+      "retrieval_time": 0.31,
+      "llm_time": 2.03,
+      "keyword_accuracy": 0.8,
+      "relevance": 0.84,
+      "contextual_awareness": 1.0,
+      "response_quality": 0.9,
+      "overall": 0.87
+    },
+    {
+      "id": 2,
+      "question": "Sample question 2",
+      "answer": "Sample answer 2",
+      "sources": [],
+      "retrieval_time": 0.37,
+      "llm_time": 2.14,
+      "keyword_accuracy": 0.7,
+      "relevance": 0.74,
+      "contextual_awareness": 1.0,
+      "response_quality": 0.8,
+      "overall": 0.79
+    }
+  ]
+}

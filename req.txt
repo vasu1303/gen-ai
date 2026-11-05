@@ -1,0 +1,12 @@
+
+PyPDF2
+pymupdf
+Pillow
+langchain-text-splitters
+sentence-transformers
+faiss-cpu
+numpy
+requests
+streamlit
+pandas
+pytest
